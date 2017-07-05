@@ -1,5 +1,5 @@
 """
-Simple Hanyang PUA to Unicode IPK Converter
+Simple Hanyang PUA to Unicode IPF Converter
 
 """
 

@@ -1,9 +1,9 @@
 """
-Simple Hanyang PUA to Unicode IPK Converter
+Simple Hanyang PUA to Unicode IPF Converter
 
 """
 
 
-import hpuaipk
+import hpuaipf
 
-hpuaipk.main()
+hpuaipf.main()
