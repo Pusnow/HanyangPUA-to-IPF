@@ -38,14 +38,14 @@ class Converter(object):
         except FileNotFoundError:
             return "File not found: " + str(file_path)
 
-        _save = open(save_path, "w", encoding=self._encoding)
+        with open(save_path, "w", encoding=self._encoding) as _save:
 
-        line = _file.readline()
-
-        while line:
             line = _file.readline()
-            _save.write("".join(table[char] if char in table else char
-                                for char in line))
+
+            while line:
+                line = _file.readline()
+                _save.write("".join(table[char] if char in table else char
+                                    for char in line))
 
 
 def main():
