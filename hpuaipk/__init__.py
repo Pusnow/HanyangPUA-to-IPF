@@ -26,9 +26,9 @@ class Converter(object):
         line = _file.readline()
 
         while line:
-            line = _file.readline()
             yield "".join(table[char] if char in table else char
                           for char in line)
+            line = _file.readline()
 
     def save(self, file_path, save_path):
 
@@ -43,9 +43,9 @@ class Converter(object):
             line = _file.readline()
 
             while line:
-                line = _file.readline()
                 _save.write("".join(table[char] if char in table else char
                                     for char in line))
+                line = _file.readline()
 
 
 def main():
