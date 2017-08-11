@@ -6,14 +6,19 @@ Simple Hanyang PUA to Unicode IPF Converter
 import fire
 from .table import table
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
 class Converter(object):
     """A simple converter class."""
 
-    def __init__(self, encoding="utf8"):
+    def __init__(self, encoding="utf8", encodingout=None):
         self._encoding = encoding
+
+        if encodingout:
+            self._encodingout = encodingout
+        else:
+            self._encodingout = encoding
 
     def print(self, file_path):
 
@@ -38,7 +43,7 @@ class Converter(object):
         except FileNotFoundError:
             return "File not found: " + str(file_path)
 
-        with open(save_path, "w", encoding=self._encoding) as _save:
+        with open(save_path, "w", encoding=self._encodingout) as _save:
 
             line = _file.readline()
 
